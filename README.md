@@ -4,4 +4,4 @@ Last experiment with my "graphical engine" using html divs.
 
 This is an implementation of the very famous Conway's Game of Life, with a few shapes baked in.
 
-
+Go to https://adchad.github.io/JS_something/
