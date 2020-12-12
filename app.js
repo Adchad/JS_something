@@ -296,6 +296,7 @@ class Shape {
 function drawShape(shape_name,x,y) {
   var shape = new Shape(map.map, shapes[shape_name],x,y);
   shape.draw();
+  map.draw();
   
 }
 
