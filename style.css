@@ -66,10 +66,18 @@ body{
 }
 
 #btn-pause{
-    position: absolute;
-    left:90%;
+    position: relative;
+    left:50%;
     width: 53px;
     height: 53px;
+    
+}
+#btn-forward{
+    position: relative;
+    left:50%;
+    width: 53px;
+    height: 53px;
+    background: url(./forward.png);
     
 }
 

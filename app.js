@@ -86,7 +86,10 @@ document.getElementById("btn-pause").addEventListener('click', function() {
   }
 });
 
-
+document.getElementById("btn-forward").addEventListener('click', function(){
+  map.iteration();
+  map.draw();
+})
 
 
 
