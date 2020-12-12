@@ -1,0 +1,49 @@
+.insidediv{
+    position: absolute;
+    border:1px solid #859d9c;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    z-index: 5;
+
+}
+
+.insidediv:hover{
+    animation: test 0.05s;
+    transform: translate(-3px, -3px);
+    width: 26px;
+    height: 26px;
+    z-index: 10;
+
+}
+
+
+body{
+    background-color: black;
+    /*background-image: url('./tetris_back.jpg');
+    font-family: "tetris";*/
+}
+
+.score{
+    text-align: center; 
+    
+    color: blanchedalmond;
+    /*font-family: 'tetris';*/
+    font-size: 75px;
+    font-weight: bold;
+    letter-spacing: -1px;
+            
+
+}
+
+.btn-shape{
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+#btn-square{background: url(./square.png);}
+#btn-beehive{background: url(./beehive.png);}
+#btn-loaf{background: url(./loaf.png);}
+#btn-boat{background: url(./boat.png);}
+#btn-glider{background: url(./glider.png);}
