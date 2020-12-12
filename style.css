@@ -20,30 +20,50 @@
 
 body{
     background-color: black;
-    /*background-image: url('./tetris_back.jpg');
-    font-family: "tetris";*/
 }
 
-.score{
-    text-align: center; 
-    
-    color: blanchedalmond;
-    /*font-family: 'tetris';*/
-    font-size: 75px;
-    font-weight: bold;
-    letter-spacing: -1px;
-            
-
-}
 
 .btn-shape{
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
 }
 
-#btn-square{background: url(./square.png);}
-#btn-beehive{background: url(./beehive.png);}
-#btn-loaf{background: url(./loaf.png);}
-#btn-boat{background: url(./boat.png);}
-#btn-glider{background: url(./glider.png);}
+#btn-square{
+    background: url(./square.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+}
+
+
+#btn-cross{
+    background: url(./cross.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+}
+
+#btn-idk{
+    background: url(./idk.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+}
+
+#btn-stick{
+    background: url(./stick.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+}
+
+#btn-glider{
+    background: url(./glider.png);
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+}
+
+
+    

@@ -6,9 +6,10 @@ great_div_DOM.addEventListener('click',drawOnClick);
 
 var xpadded,ypadded;
 var map;
+var paused = false;
 
-const sizex = 30;
-const sizey = 30;
+const sizex = 35;
+const sizey = 35;
 
 const offsetx = 200;
 const offsety = 200;
@@ -24,21 +25,21 @@ var shapes ={
     [ 1 , 1 ]
   ],
 
-  "beehive":[
+  "idk":[
     [ 0 , 1 , 1 , 0 ],
+    [ 1 , 0 , 0 , 1 ],
     [ 1 , 0 , 0 , 1 ],
     [ 0 , 1 , 1 , 0 ]
   ],
 
-  "loaf":[
-    [ 0 , 1 , 1 , 0 ],
-    [ 1 , 0 , 0 , 1 ],
-    [ 0 , 1 , 0 , 1 ],
-    [ 0 , 0 , 1 , 0 ]
+  "stick":[
+    [ 1 ],
+    [ 1 ],
+    [ 1 ] 
   ],
 
-  "boat":[
-    [ 1 , 1 , 0 ],
+  "cross":[
+    [ 0 , 1 , 0 ],
     [ 1 , 0 , 1 ],
     [ 0 , 1 , 0 ],
   ],
@@ -56,14 +57,14 @@ document.getElementById("btn-square").addEventListener('click', function() {
   drawing=true;
   current_shape="square";
 });
-document.getElementById("btn-beehive").addEventListener('click', function() {
+document.getElementById("btn-cross").addEventListener('click', function() {
   drawing=true;
-  current_shape="beehive";
+  current_shape="cross";
 });
 
-document.getElementById("btn-boat").addEventListener('click', function() {
+document.getElementById("btn-idk").addEventListener('click', function() {
   drawing=true;
-  current_shape="boat";
+  current_shape="idk";
 });
 
 document.getElementById("btn-glider").addEventListener('click', function() {
@@ -71,9 +72,9 @@ document.getElementById("btn-glider").addEventListener('click', function() {
   current_shape="glider";
 });
 
-document.getElementById("btn-loaf").addEventListener('click', function() {
+document.getElementById("btn-stick").addEventListener('click', function() {
   drawing=true;
-  current_shape="loaf";
+  current_shape="stick";
 });
 
 
@@ -145,8 +146,8 @@ function init(){
           xpadded = ("00" + x).slice (-3);
           ypadded = ("00" + y).slice (-3);
           great_div_DOM.innerHTML += "<div class=\"insidediv\" id=\"indiv-"+ xpadded +"-"+ ypadded + "\"></div>\n";
-          document.querySelector("#indiv-"+ xpadded +"-"+ ypadded).style.left = x*22 + offsetx + "px";
-          document.querySelector("#indiv-"+ xpadded +"-"+ ypadded).style.top = y*22 + offsety + "px";
+          document.querySelector("#indiv-"+ xpadded +"-"+ ypadded).style.left = x*21 + offsetx + "px";
+          document.querySelector("#indiv-"+ xpadded +"-"+ ypadded).style.top = y*21 + offsety + "px";
 
       }
 
@@ -198,7 +199,6 @@ class Map {
         if(old_map[i][j].state){
 
           if(neighb==2 || neighb==3){this.map[i][j].add();}
-          console.log("test");
           if(neighb<=1 || neighb==4){this.map[i][j].remove();}
 
         }else{
@@ -244,8 +244,6 @@ class Map {
     if(y<sizey-1){
       if(map[x][y+1].state) counter++;
     }
-    
-    if(counter>1){console.log(counter);}
     return counter;
   }
 
@@ -323,11 +321,13 @@ map.draw();
 async function loop(timestamp) {
   await sleep(speed);
 
-  map.iteration();
-  map.draw();
+  if(paused==false){
+    map.iteration();
+    map.draw();
+  }
 
-  await sleep(speed);
-  window.requestAnimationFrame(loop)
+  window.requestAnimationFrame(loop);
+  
 } 
 
 
