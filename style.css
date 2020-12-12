@@ -25,8 +25,8 @@ body{
 
 .btn-shape{
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 53px;
+    height: 53px;
 }
 
 #btn-square{
@@ -65,5 +65,19 @@ body{
     background-position: center;
 }
 
+#btn-pause{
+    position: absolute;
+    left:90%;
+    width: 53px;
+    height: 53px;
+    
+}
 
+.btn-paused{
+    background: url(./pause.png);
+}
+    
+.btn-play{
+    background: url(./play.png);
+}
     

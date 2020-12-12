@@ -77,6 +77,17 @@ document.getElementById("btn-stick").addEventListener('click', function() {
   current_shape="stick";
 });
 
+document.getElementById("btn-pause").addEventListener('click', function() {
+  paused=!paused;
+  if(paused){
+    document.getElementById("btn-pause").className = "btn-play";
+  }else{
+    document.getElementById("btn-pause").className = "btn-paused";
+  }
+});
+
+
+
 
 
 
@@ -314,7 +325,6 @@ init();
 //GAME LOOP
 //
 
-drawShape("glider",10,10);
 
 map.draw();
 
